@@ -12,11 +12,7 @@ async function bootstrap() {
       whitelist: true,          
       forbidNonWhitelisted: true,
       transform: true,          
-<<<<<<< HEAD
-      stopAtFirstError: false,  
-=======
       stopAtFirstError: false, 
->>>>>>> 84b8b16469119f7885cf1c10a75f9a93fc448f3d
     }),
   );
 

@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-// Single Axios instance used across the entire app
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3001',
+  baseURL: 'https://store-rating-31kg.onrender.com',
   headers: { 'Content-Type': 'application/json' },
 });
 
-// Attach JWT from localStorage to every request automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
