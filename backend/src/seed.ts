@@ -1,9 +1,3 @@
-/**
- * Seed Script — creates admin, store owner, normal user, and a sample store.
- * Run from the backend folder:
- *   npx ts-node src/seed.ts
- */
-
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import * as bcrypt from 'bcrypt';
