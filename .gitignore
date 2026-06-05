@@ -63,5 +63,6 @@ docker-data/
 prisma/dev.db
 prisma/dev.db-journal
 
+# Postman
 .postman/
 postman/globals/
