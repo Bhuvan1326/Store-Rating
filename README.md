@@ -41,6 +41,22 @@ These accounts are created by running `npx ts-node src/seed.ts` from the backend
 > Passwords must be 8–16 characters, contain at least one uppercase letter and one special character.
 
 ---
+## Screenshots
+<img width="1920" height="968" alt="Screenshot (108)" src="https://github.com/user-attachments/assets/c09d1a4b-24a5-41a1-b01e-a719e4f12f7d" />
+
+<br><br>
+
+<img width="1920" height="962" alt="Screenshot (109)" src="https://github.com/user-attachments/assets/1ba67526-3d4e-422a-9191-6e7560090c60" />
+
+<br><br>
+
+<img width="1920" height="968" alt="Screenshot (110)" src="https://github.com/user-attachments/assets/237636c8-dfd4-4937-8203-a5c6582b7856" />
+
+<br><br>
+
+<img width="1920" height="965" alt="Screenshot (111)" src="https://github.com/user-attachments/assets/a56e70d5-a5b6-4623-af85-8c8bf5da9e2f" />
+
+---
 
 ## Project Structure
 
