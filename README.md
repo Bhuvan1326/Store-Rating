@@ -28,17 +28,25 @@ Normal users self-register. Admins create store owners and other admins.
 
 ---
 
-## Seed Accounts
+## Live Demo
 
-These accounts are created by running `npx ts-node src/seed.ts` from the backend folder.
+### Frontend
 
-| Role | Email | Password |
-|---|---|---|
-| Admin | admin@example.com | Admin@1234 |
-| Store Owner | owner@example.com | Owner@1234 |
-| Normal User | user@example.com | User@1234 |
+https://store-rating-1-efky.onrender.com/
 
-> Passwords must be 8–16 characters, contain at least one uppercase letter and one special character.
+### Backend API
+
+https://store-rating-31kg.onrender.com/
+
+### Demo Credentials
+
+| Role        | Email                                         | Password   |
+| ----------- | --------------------------------------------- | ---------- |
+| Admin       | [admin@example.com](mailto:admin@example.com) | Admin@1234 |
+| Store Owner | [owner@example.com](mailto:owner@example.com) | Owner@1234 |
+| Normal User | [user@example.com](mailto:user@example.com)   | User@1234  |
+
+> The application is deployed on Render with a PostgreSQL database hosted on Neon.
 
 ---
 ## Screenshots
