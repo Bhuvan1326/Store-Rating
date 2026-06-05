@@ -17,7 +17,6 @@ export class OwnerService {
       throw new NotFoundException('No store found for your account. Contact an admin.');
     }
 
-    // Fetch all ratings for this store, joined with the rater's profile
     const ratings = await this.ratingsRepo
       .createQueryBuilder('rating')
       .innerJoin('rating.user', 'user')

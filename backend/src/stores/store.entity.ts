@@ -30,7 +30,6 @@ export class Store {
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  // FK → users.id; cascade delete removes store when owner is deleted
   @ManyToOne(() => User, (user) => user.store, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'owner_id' })
   owner: User;
@@ -38,7 +37,6 @@ export class Store {
   @Column({ name: 'owner_id' })
   ownerId: string;
 
-  // A store collects many ratings
   @OneToMany(() => Rating, (rating) => rating.store, { cascade: ['remove'] })
   ratings: Rating[];
 }

@@ -18,7 +18,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     });
   }
 
-  // Called after token signature is verified; return value is attached to req.user
   async validate(payload: JwtPayload) {
     if (!payload.userId || !payload.role) {
       throw new UnauthorizedException('Invalid token payload');

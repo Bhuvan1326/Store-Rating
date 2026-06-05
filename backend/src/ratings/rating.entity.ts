@@ -11,7 +11,6 @@ import {
 import { User } from '../users/user.entity';
 import { Store } from '../stores/store.entity';
 
-// One rating per user per store — enforced at DB level
 @Entity('ratings')
 @Unique(['userId', 'storeId'])
 export class Rating {

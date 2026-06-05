@@ -10,7 +10,6 @@ import { CurrentUser } from '../common/decorators/current-user.decorator';
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
-  // Available to both user and store_owner roles
   @Put('me/password')
   @Roles('user', 'store_owner')
   changePassword(

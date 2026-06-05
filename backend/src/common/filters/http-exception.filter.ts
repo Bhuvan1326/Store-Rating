@@ -18,7 +18,6 @@ export class HttpExceptionFilter implements ExceptionFilter {
       const status = exception.getStatus();
       const exceptionResponse = exception.getResponse() as any;
 
-      // ValidationPipe errors come as an array under `message`
       if (exception instanceof BadRequestException && Array.isArray(exceptionResponse.message)) {
         return response.status(status).json({
           statusCode: status,

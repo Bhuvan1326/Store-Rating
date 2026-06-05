@@ -37,7 +37,6 @@ export class AuthService {
 
     await this.usersRepo.save(user);
 
-    // Don't expose the password hash in the response
     const { password, ...result } = user;
     return result;
   }
@@ -45,7 +44,6 @@ export class AuthService {
   async login(dto: LoginDto) {
     const user = await this.usersRepo.findOne({ where: { email: dto.email } });
 
-    // Same error message whether email or password is wrong — don't hint which
     if (!user) {
       throw new UnauthorizedException('Invalid email or password');
     }

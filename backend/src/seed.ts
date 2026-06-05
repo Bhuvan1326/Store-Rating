@@ -1,9 +1,3 @@
-/**
- * Seed Script — creates admin, store owner, normal user, and a sample store.
- * Run from the backend folder:
- *   npx ts-node src/seed.ts
- */
-
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import * as bcrypt from 'bcrypt';
@@ -84,7 +78,6 @@ async function seed() {
     console.log('✓ Normal user created — user@example.com / User@1234');
   }
 
-  // ── Sample Store ───────────────────────────────────────────
   const storeExists = await storeRepo.findOne({ where: { email: 'contact@grandsamplestore.com' } });
   if (!storeExists) {
     const store = storeRepo.create({

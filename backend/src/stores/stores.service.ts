@@ -7,7 +7,6 @@ import { Store } from './store.entity';
 export class StoresService {
   constructor(@InjectRepository(Store) private storesRepo: Repository<Store>) {}
 
-  // Returns all stores with avg rating and the requesting user's own rating (if any)
   async listStores(userId: string, search?: string) {
     const qb = this.storesRepo
       .createQueryBuilder('store')

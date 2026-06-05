@@ -22,7 +22,6 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  // Indexed for filter-by-name queries
   @Index()
   @Column({ length: 60 })
   name: string;
@@ -31,7 +30,6 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-  // Never returned in API responses — excluded via class-transformer
   @Exclude()
   @Column()
   password: string;
@@ -46,11 +44,9 @@ export class User {
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  // A user submits many ratings
   @OneToMany(() => Rating, (rating) => rating.user, { cascade: ['remove'] })
   ratings: Rating[];
 
-  // A store_owner owns one store
   @OneToOne(() => Store, (store) => store.owner)
   store: Store;
 }

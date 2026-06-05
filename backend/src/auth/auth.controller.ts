@@ -6,7 +6,6 @@ import { RegisterDto, LoginDto } from './auth.dto';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  // Public — no JWT required
   @Post('register')
   register(@Body() dto: RegisterDto) {
     return this.authService.register(dto);

@@ -60,7 +60,6 @@ export class AdminService {
       qb.andWhere('user.role = :role', { role: filters.role });
     }
 
-    // Whitelist sortable columns to prevent SQL injection
     const sortableColumns = ['name', 'email', 'role', 'createdAt'];
     const sortBy = sortableColumns.includes(filters.sortBy) ? filters.sortBy : 'createdAt';
     const sortOrder = filters.sortOrder?.toUpperCase() === 'ASC' ? 'ASC' : 'DESC';
@@ -79,7 +78,6 @@ export class AdminService {
 
     if (!user) throw new NotFoundException('User not found');
 
-    // For store owners, include their store's average rating
     if (user.role === UserRole.STORE_OWNER) {
       const store = await this.storesRepo.findOne({ where: { ownerId: id } });
       if (store) {
@@ -138,7 +136,6 @@ export class AdminService {
 
     const raw = await qb.getRawAndEntities();
 
-    // Merge computed averages back into entity results
     return raw.entities.map((store, i) => ({
       id: store.id,
       name: store.name,
@@ -167,7 +164,6 @@ export class AdminService {
     return this.storesRepo.save(store);
   }
 
-  // Returns all store_owner users — used to populate owner dropdown in Add Store form
   async listStoreOwners() {
     return this.usersRepo.find({
       where: { role: UserRole.STORE_OWNER },
