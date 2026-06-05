@@ -7,17 +7,15 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Global validation pipe — enforces all DTOs automatically
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true,          // strip unknown fields
+      whitelist: true,          
       forbidNonWhitelisted: true,
-      transform: true,          // auto-cast primitives
-      stopAtFirstError: false,  // collect all field errors at once
+      transform: true,          
+      stopAtFirstError: false, 
     }),
   );
 
-  // Consistent error shape across all endpoints
   app.useGlobalFilters(new HttpExceptionFilter());
 
   app.enableCors({
